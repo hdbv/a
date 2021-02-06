@@ -1,4 +1,4 @@
-import { calculatedayvalue } from './calculatedayvalue.js';
+const calculatedayvalue = require('../modules/calculatedayvalue');
 
 function payment(empfound){
     var days2pay = [];
@@ -17,4 +17,4 @@ function payment(empfound){
     return amount;
 }
 
-export { payment };
+module.exports =  payment ;

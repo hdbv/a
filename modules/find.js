@@ -1,4 +1,5 @@
-//finds the employee on the file and returns it's record with all the days and hours the employee worked in an array
+const prompt = require('prompt-sync')();
+
 function find(file,employee){
     var employeerecord=[];
     var result;
@@ -14,11 +15,12 @@ function find(file,employee){
         employeerecord.push(employee)
         //set the result for the array of days and hours an the user name
         result = employeerecord;
-    } else {        
-        employee = prompt("Please enter a valid employee name or q to exit",'').toUpperCase();
-        if(employee !== 'Q'){
+    } else {
+        var answer = prompt('Please enter a valid employee name or q to exit: ');
+        answer = answer.toUpperCase();
+        if(answer !== 'Q'){
             //recursion call with new name as it gets the result value
-            result = find(file,employee);
+            result = find(file,answer);
         } else {
             //set result as false if the user quits
             result = false;
@@ -26,7 +28,5 @@ function find(file,employee){
     }
     return result;
 }
-function sum(a, b) {
-    return a + b;
-  }
-export { find,sum };
+
+module.exports = find;

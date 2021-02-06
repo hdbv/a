@@ -1,5 +1,5 @@
 // table of amounts
-import { table } from './table.js';
+const table = require('../modules/table');
 
 //calculate daily payment 
 function calculatedayvalue(dayvalue){
@@ -49,4 +49,5 @@ function calculatedayvalue(dayvalue){
     }
     return amount;
 }
-export { calculatedayvalue };
+
+module.exports =  calculatedayvalue;
