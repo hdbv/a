@@ -26,4 +26,5 @@ function find(file,employee){
     }
     return result;
 }
-module.exports = {find};
+
+export { find };

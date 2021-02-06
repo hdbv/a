@@ -1,5 +1,5 @@
-const find = require('./find');
-const calc = require('./calculatedayvalue');
+import { calculatedayvalue } from './calculatedayvalue.js';
+import { find } from './find.js';
 
 document.addEventListener('DOMContentLoaded',function(){
     //reads txt file
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded',function(){
             //ask for employee to calculate payment
             var employee = prompt("Please enter employee name",'').toUpperCase();
             //call find function expects a false or an array
-            var empfound = find.find(fileresult,employee);
+            var empfound = find(fileresult,employee);
             //if empfound is false asks for a new file
             if( empfound === false){
                 alert('Please select a file');
@@ -32,16 +32,17 @@ document.addEventListener('DOMContentLoaded',function(){
 
 function payment(empfound){
     var days2pay = [];
+    var days = [];
     var amount=0;
-    //RENE=MO10:00-12:00,TU10:00-12:00,TH01:00-03:00,SA14:00-18:00,SU20:00-21:00
+    //splits the name and days to fill the days2pay array
     empfound.forEach( element => {
         days = element.split('=')[1];
         days = days.split(',');
         days2pay.push(...days);
     });
-    //["MO10:00-12:00", "TU10:00-12:00", "TH01:00-03:00", "SA14:00-18:00", "SU20:00-21:00"]
+    //calls the function to calculate the amount of each day according to the hours worked
     days2pay.forEach(element=>{
-        amount += calc.calculatedayvalue(element);
+        amount += calculatedayvalue(element);
     });
     return amount;
 }

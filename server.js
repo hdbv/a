@@ -11,7 +11,3 @@ const server = app.listen(7000, () => {
 
 //set the server default page with index.html
 app.use( express.static('.',{index: 'index.html'}) );
-
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-  });
