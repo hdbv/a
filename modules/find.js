@@ -26,5 +26,7 @@ function find(file,employee){
     }
     return result;
 }
-
-export { find };
+function sum(a, b) {
+    return a + b;
+  }
+export { find,sum };
