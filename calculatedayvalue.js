@@ -1,3 +1,6 @@
+// table of amounts
+const table = data;
+
 //calculate daily payment 
 function calculatedayvalue(dayvalue){
     var value;
@@ -46,3 +49,5 @@ function calculatedayvalue(dayvalue){
     }
     return amount;
 }
+
+module.exports = {calculatedayvalue};

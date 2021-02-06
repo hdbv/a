@@ -26,9 +26,4 @@ function find(file,employee){
     }
     return result;
 }
-
-function sum(a, b) {
-    return a + b;
-  }
-module.exports = sum;
-module.exports = calculatedayvalue;
+module.exports = {find};

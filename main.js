@@ -1,5 +1,5 @@
-// table of amounts
-const table = data;
+const find = require('./find');
+const calc = require('./calculatedayvalue');
 
 document.addEventListener('DOMContentLoaded',function(){
     //reads txt file
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded',function(){
             //ask for employee to calculate payment
             var employee = prompt("Please enter employee name",'').toUpperCase();
             //call find function expects a false or an array
-            var empfound = find(fileresult,employee);
+            var empfound = find.find(fileresult,employee);
             //if empfound is false asks for a new file
             if( empfound === false){
                 alert('Please select a file');
@@ -41,7 +41,7 @@ function payment(empfound){
     });
     //["MO10:00-12:00", "TU10:00-12:00", "TH01:00-03:00", "SA14:00-18:00", "SU20:00-21:00"]
     days2pay.forEach(element=>{
-        amount += calculatedayvalue(element);
+        amount += calc.calculatedayvalue(element);
     });
     return amount;
 }

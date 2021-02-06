@@ -1,6 +1,5 @@
 //imorting web server framework express
-//const express = require('express');
-import express from 'express';
+const express = require('express');
 
 //express aplication
 const app = express()

@@ -1,6 +1,6 @@
 const { test } = require('@jest/globals');
-const calc = require('calculatedayvalue') ;
+const find = require('find') ;
 
 test('adds 1 + 2 to equal 3', () => {
-    expect(sum(1, 2)).toBe(3);
+    expect(find(1, 2)).toBe(3);
 });
